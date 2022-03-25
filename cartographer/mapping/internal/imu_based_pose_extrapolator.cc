@@ -63,6 +63,7 @@ ImuBasedPoseExtrapolator::InitializeWithImu(
       }
     }
   } else {
+    // 用线加速度代替位移?
     extrapolator->AddPose(
         imu_data.back().time,
         transform::Rigid3d::Rotation(FromTwoVectors(
